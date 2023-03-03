@@ -6,5 +6,8 @@ layout: default
 <div class="{{ page.locale }}" itemscope itemtype="http://schema.org/BlogPosting">
  <h3>{{ page.title }}</h3>
  {{ content }}
+ {% if page.end %}
+  {{ site.data.locales[page.locale].post.end }}
+ {% endif %}
 </div>
 {% endif %}
