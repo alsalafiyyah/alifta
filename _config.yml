@@ -10,6 +10,7 @@ safe: true
 future: true
 locales: ["en", "ar"]
 paginate: 1
+paginate_path: "/:num/"
 
 defaults:
   # default en
