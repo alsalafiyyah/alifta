@@ -1,0 +1,16 @@
+name: en
+
+blog:
+  title: "Alifta Fatwas"
+  description: 
+  site_url: /en/
+
+menu:
+  - name: Home
+    link: /en/
+    active: home
+
+page:
+  next: Next
+  prev: Prev
+  more: More
