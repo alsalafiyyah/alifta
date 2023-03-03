@@ -12,7 +12,9 @@ locale: ar
   <a href="{{ site.baseurl }}{{ item.link }}" class="waves-effect waves-light btn black">{{ item.name }}</a>
  {% endif %}
 {% endfor %}
+{% if post.locale == 'en' %}
 <a class="waves-effect waves-light btn black" href="{{ site.baseurl }}{{ site.data.locales[page.locale].blog.site_url }}">{{ site.data.locales[page.locale].name }}</a>
+{% endif %}
 
   {% if page.locale %}
   {% assign posts = paginator.posts | where:"locale", page.locale %}
