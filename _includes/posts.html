@@ -8,7 +8,11 @@
   {% if post.locale == 'en' %}
   {% assign post_url = post.url | relative_url %}
   {{ post.date | date_to_string: "ordinal" }}
-   <a href="{{ post_url }}">{{ post.title }}</a>
+  <div class="section">
+    <a href="{{ post_url }}"><h5>{{ post.title }}</h5></a>
+    <p>{{ post.hijri }}</p>
+  </div>
+  <div class="divider"></div>
   {% endif %}
   {% endfor %}
   
