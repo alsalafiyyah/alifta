@@ -4,6 +4,7 @@
   {% else %}
   {% assign posts = site.posts %}
   {% endif %}
+
   {% assign posts = paginator.posts | default: site.posts | where:"locale", page.locale %}
   {% for post in posts %}
   {% if post.locale == 'en' %}
@@ -22,7 +23,7 @@
     {% if paginator.previous_page %}
     <li class="waves-effect"><a href="{{ paginator.previous_page_path | prepend: site.baseurl }}"><i class="medium material-icons">chevron_left</i></a></li>
     {% else %}
-    <li class="isabled"><a href="{{ paginator.previous_page_path | prepend: site.baseurl }}"><i class="medium material-icons">chevron_left</i></a></li>
+    <li class="disabled"><a href="{{ paginator.previous_page_path | prepend: site.baseurl }}"><i class="medium material-icons">chevron_left</i></a></li>
     {% endif %}
     {% if paginator.next_page %}
     <li class="waves-effect"><a href="{{ paginator.next_page_path | prepend: site.baseurl }}"><i class="medium material-icons">chevron_right</i></a></li>
