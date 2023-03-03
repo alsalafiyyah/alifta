@@ -3,6 +3,7 @@ layout: default
 ---
 
 {% if page.date %}
+
 <div class="{{ page.locale }}" itemscope itemtype="http://schema.org/BlogPosting">
  <h3>{{ page.title }}</h3>
  {{ content }}
@@ -10,4 +11,76 @@ layout: default
   {{ site.data.locales[page.locale].post.end }}
  {% endif %}
 </div>
+
+{% if page.muftis %}
+  {% if page.muftis.chairman %}
+  <dt>{{ site.data.locales[page.locale].post.chairman }}:</dt>
+   {% for chairman in page.muftis.chairman %}
+   <dd>
+    <a title="{{ chairman.name }}" href="{{ chairman.url | relative_url }}">
+     {{ chairman.name }}
+    </a>
+   </dd>
+   {% endfor %}
+   {% else %}
+  {% endif %}
+  {% if page.muftis.deputy_chairman %}
+  <dt>{{ site.data.locales[page.locale].post.deputy_chairman }}:</dt>
+   {% for deputy_chairman in page.muftis.deputy_chairman %}
+   <dd>
+    <a title="{{ deputy_chairman.name }}" href="{{ deputy_chairman.url | relative_url }}">
+     {{ deputy_chairman.name }}
+    </a>
+   </dd>
+   {% endfor %}
+   {% else %}
+  {% endif %}
+  {% if page.muftis.members %}
+  <dt>{{ site.data.locales[page.locale].post.members }}:</dt>
+   {% for members in page.muftis.members %}
+   <dd>
+    <a title="{{ members.name }}" href="{{ members.url | relative_url }}">
+     {{ members.name }}
+    </a>
+   </dd>
+   {% endfor %}
+   {% else %}
+  {% endif %}
+  {% if page.muftis.shaykh %}
+   {% for shaykh in page.muftis.shaykh %}
+    <dt>{{ site.data.locales[page.locale].post.shaykh }}:</dt>
+     <dd>
+      <a href="{{ shaykh.url | relative_url }}" title="{{ shaykh.name }}">{{ shaykh.name }}</a></dd>
+   {% endfor %}
+   {% else %}
+  {% endif %}
+{% endif %}
+
+{% if page.uid %}
+<div class="language-selector">
+  <ul class="lang">
+  {% assign postsOrPages = site.posts 
+    | concat: site.pages 
+    | concat: site.ar 
+    | where: "uid", page.uid 
+    | sort: "locale" %}
+  {% for item in postsOrPages %}
+  <!-- filter /page/ -->
+  {% unless item.url contains '/page/' %} 
+  <li><a href="{{ site.baseurl }}{{ item.url }}" class="{{ item.locale }}">
+    {{ site.data.locales[item.locale].name }}
+  </a>
+    </li>
+  {% else %}
+  <li>
+  <a href="{{ site.baseurl }}{{ item.url }}" class="{{ item.locale }} disabled">
+    {{ site.data.locales[item.locale].name }}
+  </a>
+    </li>
+  {% endunless %}
+  {% endfor %}
+  </ul>
+</div>
+{% endif%}
+
 {% endif %}
