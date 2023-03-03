@@ -18,23 +18,17 @@
   
 <!-- Pagination -->
 <div class="center-align">
-<ul class="pagination">
-  {% if paginator.previous_page %}
-  <li class="waves-effect left">
-   <a
-    href="{{ paginator.previous_page_path | relative_url }}">i class="material-icons">chevron_right</i></a>
-  </li>
-  {% else %}
-  <li class="disabled"><i class="material-icons">chevron_right</i></li>
-  {% endif %}
-  {% if paginator.next_page %}
-  <li class="waves-effect right">
-   <a
-    href="{{ paginator.next_page_path | relative_url }}"><i class="material-icons">chevron_left</i></a>
-   </li>
-  {% else %}
-  <li class="disabled"><i class="material-icons">chevron_left</i></li>
-  {% endif %}
-</ul>
+  <ul class="pagination">
+    {% if paginator.previous_page %}
+    <li class="waves-effect"><a href="{{ paginator.previous_page_path | prepend: site.baseurl }}"><i class="medium material-icons">chevron_left</i></a></li>
+    {% else %}
+    <li class="isabled"><a href="{{ paginator.previous_page_path | prepend: site.baseurl }}"><i class="medium material-icons">chevron_left</i></a></li>
+    {% endif %}
+    {% if paginator.next_page %}
+    <li class="waves-effect"><a href="{{ paginator.next_page_path | prepend: site.baseurl }}"><i class="medium material-icons">chevron_right</i></a></li>
+    {% else %}
+    <li class="disabled"><a href="{{ paginator.next_page_path | prepend: site.baseurl }}"><i class="medium material-icons">chevron_right</i></a></li>
+    {% endif %}
+  </ul>
 </div>
 </div>
