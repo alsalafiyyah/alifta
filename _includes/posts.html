@@ -1,3 +1,4 @@
+<div class="container">
   {% if page.locale %}
   {% assign posts = paginator.posts | where:"locale", page.locale %}
   {% else %}
@@ -35,4 +36,5 @@
   <li class="waves-effect disabled">{{ site.data.locales[page.locale].page.next }}</li>
   {% endif %}
 </ul>
+</div>
 </div>
