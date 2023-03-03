@@ -34,7 +34,7 @@ layout: default
  </nav>
 </div>
 
-<div class="container {{ page.locale }}" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="container {{ page.locale }}" itemscope itemtype="http://schema.org/BlogPosting" style="margin-bottom: 40px;">
 
  <h3>{{ page.title }}</h3>
  {{ content }}
@@ -48,7 +48,7 @@ layout: default
   <dt>{{ site.data.locales[page.locale].post.chairman }}:</dt>
    {% for chairman in page.muftis.chairman %}
    <dd>
-    {{ chairman.name }}
+    <b>{{ chairman.name }}</b>
    </dd>
    {% endfor %}
    {% else %}
@@ -57,7 +57,7 @@ layout: default
   <dt>{{ site.data.locales[page.locale].post.deputy_chairman }}:</dt>
    {% for deputy_chairman in page.muftis.deputy_chairman %}
    <dd>
-    {{ deputy_chairman.name }}
+    <b>{{ deputy_chairman.name }}</b>
    </dd>
    {% endfor %}
    {% else %}
@@ -66,7 +66,7 @@ layout: default
   <dt>{{ site.data.locales[page.locale].post.members }}:</dt>
    {% for members in page.muftis.members %}
    <dd>
-     {{ members.name }}
+     <b>{{ members.name }}</b>
    </dd>
    {% endfor %}
    {% else %}
