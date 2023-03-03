@@ -4,11 +4,9 @@ layout: default
 
 {% if page.date %}
 
-<div class="{{ page.locale }}" itemscope itemtype="http://schema.org/BlogPosting">
-
+<div class="navbar-fixed">
 {% if page.uid %}
-<div class="row language-selector">
-  <ul class="tabs lang">
+<ul id="dropdown1" class="dropdown-content">
   {% assign postsOrPages = site.posts 
     | concat: site.pages 
     | concat: site.ar 
@@ -16,23 +14,27 @@ layout: default
     | sort: "locale" %}
   {% for item in postsOrPages %}
   <!-- filter /page/ -->
-  {% unless item.url contains '/page/' %} 
-  <li class="tab col s3">
-  <a href="{{ site.baseurl }}{{ item.url }}" class="{{ item.locale }}">
-    {{ site.data.locales[item.locale].name }}
-  </a>
-    </li>
+  {% unless item.url contains '/page/' %}
+  <li class="active">
+   <a href="{{ site.baseurl }}{{ item.url }}" class="{{ item.locale }}">{{ site.data.locales[item.locale].name }}</a>
+  </li>
   {% else %}
-  <li class="tab col s3">
-  <a href="{{ site.baseurl }}{{ item.url }}" class="{{ item.locale }} disabled">
-    {{ site.data.locales[item.locale].name }}
-  </a>
-    </li>
+  <li>
+   <a href="{{ site.baseurl }}{{ item.url }}" class="{{ item.locale }}">{{ site.data.locales[item.locale].name }}</a>
+  </li>
   {% endunless %}
   {% endfor %}
-  </ul>
-</div>
+</ul>    
 {% endif%}
+  <nav class="nav-extended">      
+    <div class="nav-wrapper nav-wrapper-custom black center">        
+     <a href="{{ site.url }}" class="sidenav-trigger"><i class="material-icons left">arrow_back</i></a>
+      <a class="dropdown-trigger right" href="#!" data-target="dropdown1">Languages<i class="material-icons right">arrow_drop_down</i></a>
+  </div>
+ </nav>
+</div>
+
+<div class="{{ page.locale }}" itemscope itemtype="http://schema.org/BlogPosting">
 
  <h3>{{ page.title }}</h3>
  {{ content }}
@@ -42,26 +44,20 @@ layout: default
 </div>
 
 {% if page.muftis %}
-
   {% if page.muftis.chairman %}
   <dt>{{ site.data.locales[page.locale].post.chairman }}:</dt>
    {% for chairman in page.muftis.chairman %}
    <dd>
-    <a title="{{ chairman.name }}" href="{{ chairman.url | relative_url }}">
-     {{ chairman.name }}
-    </a>
+    {{ chairman.name }}
    </dd>
    {% endfor %}
    {% else %}
   {% endif %}
-
   {% if page.muftis.deputy_chairman %}
   <dt>{{ site.data.locales[page.locale].post.deputy_chairman }}:</dt>
    {% for deputy_chairman in page.muftis.deputy_chairman %}
    <dd>
-    <a title="{{ deputy_chairman.name }}" href="{{ deputy_chairman.url | relative_url }}">
-     {{ deputy_chairman.name }}
-    </a>
+    {{ deputy_chairman.name }}
    </dd>
    {% endfor %}
    {% else %}
@@ -70,18 +66,8 @@ layout: default
   <dt>{{ site.data.locales[page.locale].post.members }}:</dt>
    {% for members in page.muftis.members %}
    <dd>
-    <a title="{{ members.name }}" href="{{ members.url | relative_url }}">
      {{ members.name }}
-    </a>
    </dd>
-   {% endfor %}
-   {% else %}
-  {% endif %}
-  {% if page.muftis.shaykh %}
-   {% for shaykh in page.muftis.shaykh %}
-    <dt>{{ site.data.locales[page.locale].post.shaykh }}:</dt>
-     <dd>
-      <a href="{{ shaykh.url | relative_url }}" title="{{ shaykh.name }}">{{ shaykh.name }}</a></dd>
    {% endfor %}
    {% else %}
   {% endif %}
