@@ -1,0 +1,10 @@
+---
+layout: default
+---
+
+{% if page.date %}
+<div class="{{ page.locale }}" itemscope itemtype="http://schema.org/BlogPosting">
+ <h3>{{ page.title }}</h3>
+ {{ content }}
+</div>
+{% endif %}
