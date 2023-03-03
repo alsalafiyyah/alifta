@@ -1,0 +1,16 @@
+name: عربى
+
+blog:
+  title: "اللجنة الدائمة للبحوث العلمية والإِفتاء"
+  description: 
+  site_url: /ar/
+
+menu:
+  - name: الرئيسية
+    link: /ar/
+    active: home
+
+page:
+  next: التالي
+  prev: السابق
+  more: المزيد
