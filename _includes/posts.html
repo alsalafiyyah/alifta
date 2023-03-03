@@ -19,21 +19,21 @@
 <!-- Pagination -->
 <div class="center-align">
 <ul class="pagination">
-  {% if paginator.next_page %}
-  <li class="waves-effect">
-   <a class="left"
-    href="{{ paginator.next_page_path | relative_url }}"><i class="material-icons">chevron_left</i> {{ site.data.locales[page.locale].page.prev }}</a>
-   </li>
-  {% else %}
-  <li class="disabled"><i class="material-icons">chevron_left</i> {{ site.data.locales[page.locale].page.prev }}</li>
-  {% endif %}
   {% if paginator.previous_page %}
-  <li class="waves-effect">
-   <a class="right"
-    href="{{ paginator.previous_page_path | relative_url }}">{{ site.data.locales[page.locale].page.next }} <i class="material-icons">chevron_right</i></a>
+  <li class="waves-effect left">
+   <a
+    href="{{ paginator.previous_page_path | relative_url }}">i class="material-icons">chevron_right</i></a>
   </li>
   {% else %}
-  <li class="disabled">{{ site.data.locales[page.locale].page.next }} <i class="material-icons">chevron_right</i></li>
+  <li class="disabled"><i class="material-icons">chevron_right</i></li>
+  {% endif %}
+  {% if paginator.next_page %}
+  <li class="waves-effect right">
+   <a
+    href="{{ paginator.next_page_path | relative_url }}"><i class="material-icons">chevron_left</i></a>
+   </li>
+  {% else %}
+  <li class="disabled"><i class="material-icons">chevron_left</i></li>
   {% endif %}
 </ul>
 </div>
