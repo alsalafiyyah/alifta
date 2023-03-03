@@ -1,0 +1,20 @@
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <title>
+    {% if page.title == "home" %}
+    {{ site.data.locales[page.locale].blog.title }}
+    {% else %}
+    {{ page.title }}
+    {% endif %}
+  </title>
+  <!-- Use Atom -->
+  {% comment %} {% feed_meta %} {% endcomment %}
+  <!-- Use RSS-2.0 -->
+  <!--<link href="/rss-feed.xml" type="application/rss+xml" rel="alternate" title="{{ site.title }} | {{ site.description }}"/>
+  //-->
+  {% assign posts = site.posts | where:"uid", page.uid | sort: 'locale' %}
+  {% for post in posts %}
+  <link rel="alternate" hreflang="{{ post.locale }}" href="{{ post.url }}" />
+  {% endfor %}
