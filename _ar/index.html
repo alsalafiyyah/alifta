@@ -21,7 +21,7 @@ locale: ar
 
   {% assign posts = paginator.posts | default: site.posts | where:"locale", page.locale %}
   {% for post in posts %}
-  {% if post.locale == 'en' %}
+  {% if post.locale == 'ar' %}
   {% assign post_url = post.url | relative_url %}
   <div class="section">
    <a href="{{ post_url }}"><h5>{{ post.title }}</h5></a>
