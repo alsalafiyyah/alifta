@@ -3,3 +3,12 @@ layout: default
 permalink: /ar/
 locale: ar
 ---
+
+{% for item in site.data.locales[page.locale].menu %}
+ {% if {{page.active}} == {{item.active}} %}
+  <a href="{{ site.baseurl }}{{ item.link }}" class="waves-effect waves-light btn black">{{ item.name }}</a>
+ {% else %}
+  <a href="{{ site.baseurl }}{{ item.link }}" class="waves-effect waves-light btn black">{{ item.name }}</a>
+ {% endif %}
+{% endfor %}
+{% include posts.html %}
