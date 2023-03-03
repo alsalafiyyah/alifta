@@ -9,6 +9,7 @@ markdown: kramdown
 safe: true
 future: true
 locales: ["en", "ar"]
+paginate: 1
 
 defaults:
   # default en
