@@ -5,6 +5,35 @@ layout: default
 {% if page.date %}
 
 <div class="{{ page.locale }}" itemscope itemtype="http://schema.org/BlogPosting">
+
+{% if page.uid %}
+<div class="row language-selector">
+  <ul class="tabs lang">
+  {% assign postsOrPages = site.posts 
+    | concat: site.pages 
+    | concat: site.ar 
+    | where: "uid", page.uid 
+    | sort: "locale" %}
+  {% for item in postsOrPages %}
+  <!-- filter /page/ -->
+  {% unless item.url contains '/page/' %} 
+  <li class="tab col s3">
+  <a href="{{ site.baseurl }}{{ item.url }}" class="{{ item.locale }}">
+    {{ site.data.locales[item.locale].name }}
+  </a>
+    </li>
+  {% else %}
+  <li class="tab col s3">
+  <a href="{{ site.baseurl }}{{ item.url }}" class="{{ item.locale }} disabled">
+    {{ site.data.locales[item.locale].name }}
+  </a>
+    </li>
+  {% endunless %}
+  {% endfor %}
+  </ul>
+</div>
+{% endif%}
+
  <h3>{{ page.title }}</h3>
  {{ content }}
  {% if page.end %}
@@ -57,32 +86,5 @@ layout: default
    {% else %}
   {% endif %}
 {% endif %}
-
-{% if page.uid %}
-<div class="language-selector">
-  <ul class="lang">
-  {% assign postsOrPages = site.posts 
-    | concat: site.pages 
-    | concat: site.ar 
-    | where: "uid", page.uid 
-    | sort: "locale" %}
-  {% for item in postsOrPages %}
-  <!-- filter /page/ -->
-  {% unless item.url contains '/page/' %} 
-  <li><a href="{{ site.baseurl }}{{ item.url }}" class="{{ item.locale }}">
-    {{ site.data.locales[item.locale].name }}
-  </a>
-    </li>
-  {% else %}
-  <li>
-  <a href="{{ site.baseurl }}{{ item.url }}" class="{{ item.locale }} disabled">
-    {{ site.data.locales[item.locale].name }}
-  </a>
-    </li>
-  {% endunless %}
-  {% endfor %}
-  </ul>
-</div>
-{% endif%}
 
 {% endif %}
