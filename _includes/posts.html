@@ -7,10 +7,9 @@
   {% for post in posts %}
   {% if post.locale == 'en' %}
   {% assign post_url = post.url | relative_url %}
-  {{ post.date | date_to_string: "ordinal" }}
   <div class="section">
-    <a href="{{ post_url }}"><h5>{{ post.title }}</h5></a>
-    <p>{{ post.hijri }}</p>
+   <a href="{{ post_url }}"><h5>{{ post.title }}</h5></a>
+   <p>Posted on <b>{{ post.hijri }}</b></p>
   </div>
   <div class="divider"></div>
   {% endif %}
