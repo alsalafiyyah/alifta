@@ -15,7 +15,7 @@ layout: default
   {% for item in postsOrPages %}
   <!-- filter /page/ -->
   {% unless item.url contains '/page/' %}
-  <li class="active">
+  <li>
    <a href="{{ site.baseurl }}{{ item.url }}" class="{{ item.locale }}">{{ site.data.locales[item.locale].name }}</a>
   </li>
   {% else %}
@@ -28,7 +28,7 @@ layout: default
 {% endif%}
   <nav class="nav-extended">      
     <div class="nav-wrapper nav-wrapper-custom black center">        
-     <a href="{{ site.url }}" class="sidenav-trigger"><i class="material-icons left">arrow_back</i></a>
+     <a href="{{ site.url }}" class="sidenav-trigger"><i class="material-icons left">keyboard_backspace</i></a>
       <a class="dropdown-trigger right" href="#!" data-target="dropdown1">Languages<i class="material-icons right">arrow_drop_down</i></a>
   </div>
  </nav>
