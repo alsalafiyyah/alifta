@@ -1,0 +1,45 @@
+title:          Alifta Fatwas
+description:    ""
+baseurl:        "/alifta/"
+url:            "https://alsalafiyyah.github.io/alifta/"
+encoding: UTF-8
+timezone: Asia/Riyadh
+permalink: pretty
+markdown: kramdown
+safe: true
+future: true
+locales: ["en", "ar"]
+
+defaults:
+  # default en
+  - values:
+      locale: en
+  # config posts
+  - scope:
+      path: _posts/en/**
+      type: posts
+    values:
+      layout: post
+      permalink: /en/:title
+  - scope:
+      path: _posts/ar/**
+      type: posts
+    values:
+      layout: post
+      locale: ar
+      permalink: /ar/:title
+  # config pages
+  - scope: 
+      path: _en/**
+    values: 
+      locale: en
+  - scope: 
+      path: _ar/**
+    values: 
+      locale: ar
+
+collections:
+  ar:
+    output: true
+  en: 
+    output: true
