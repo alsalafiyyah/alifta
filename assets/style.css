@@ -1,6 +1,9 @@
 @import url(https://fonts.googleapis.com/earlyaccess/notonaskharabic.css);
 @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
 
+body {
+ font-size: 15px;
+}
 .ar {
  direction: rtl! important;
  text-align: right! important;
