@@ -1,0 +1,30 @@
+  {% if page.locale %}
+  {% assign posts = paginator.posts | where:"locale", page.locale %}
+  {% else %}
+  {% assign posts = site.posts %}
+  {% endif %}
+  {% assign posts = paginator.posts | default: site.posts | where:"locale", page.locale %}
+  {% for post in posts %}
+  {% if post.locale == 'en' %}
+  {% assign post_url = post.url | relative_url %}
+  {{ post.date | date_to_string: "ordinal" }}
+   <a href="{{ post_url }}">{{ post.title }}</a>
+  {% endif %}
+  {% endfor %}
+  
+<!-- Pagination -->
+<div class="pagination">
+  {% if paginator.next_page %}
+  <a class="pagination-button pagination-active next"
+    href="{{ paginator.next_page_path | absolute_url }}">{{ site.data.locales[page.locale].page.prev }}</a>
+  {% else %}
+  <span class="pagination-button">{{ site.data.locales[page.locale].page.prev }}</span>
+  {% endif %}
+
+  {% if paginator.previous_page %}
+  <a class="pagination-button pagination-active"
+    href="{{ paginator.previous_page_path | absolute_url }}">{{ site.data.locales[page.locale].page.next }}</a>
+  {% else %}
+  <span class="pagination-button">{{ site.data.locales[page.locale].page.next }}</span>
+  {% endif %}
+ </div>
