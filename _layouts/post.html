@@ -13,9 +13,9 @@ layout: default
 </div>
 
 {% if page.muftis %}
-  {% if page.muftis.chairman %}
-  <dt>{{ site.data.locales[page.locale].post.chairman }}:</dt>
-   {% for chairman in page.muftis.chairman %}
+  {% if page.muftis.deputy %}
+  <dt>{{ site.data.locales[page.locale].post.deputy }}:</dt>
+   {% for chairman in page.muftis.deputy %}
    <dd>
     <a title="{{ chairman.name }}" href="{{ chairman.url | relative_url }}">
      {{ chairman.name }}
