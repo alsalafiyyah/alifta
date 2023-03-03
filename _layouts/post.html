@@ -41,8 +41,7 @@ layout: default
  {% if page.end %}
   {{ site.data.locales[page.locale].post.end }}
  {% endif %}
-</div>
-
+<hr/>
 {% if page.muftis %}
   {% if page.muftis.chairman %}
   <dt>{{ site.data.locales[page.locale].post.chairman }}:</dt>
@@ -72,5 +71,6 @@ layout: default
    {% else %}
   {% endif %}
 {% endif %}
+</div>
 
 {% endif %}
