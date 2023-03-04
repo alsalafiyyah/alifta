@@ -1,8 +1,17 @@
 @import url(https://fonts.googleapis.com/earlyaccess/notonaskharabic.css);
 @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
 
-body {
- font-size: 21px;
+body, html {
+ height: 100%;
+ padding: 0;
+ margin: 0;
+ font-size: 18px;
+}
+h3 {
+    font-size: 34px! important;
+}
+h4, h3, h2 {
+ font-weight: 600;
 }
 .ar {
  direction: rtl! important;
@@ -20,4 +29,9 @@ body {
 }
 .ar h1 {
  font-family: 'Cairo', sans-serif;
+}
+@media only screen and (min-width: 993px) {
+  nav a.sidenav-trigger {
+  display: block !important;
+  }
 }
