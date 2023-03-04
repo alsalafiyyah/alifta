@@ -39,3 +39,9 @@ defaults:
       path: _ar/**
     values: 
       locale: ar
+
+collections:
+  ar:
+    output: true
+  en: 
+    output: true
