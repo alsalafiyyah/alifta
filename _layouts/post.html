@@ -42,6 +42,14 @@ layout: default
   {{ site.data.locales[page.locale].post.end }}
  {% endif %}
 <hr/>
+{% if page.source %}
+  <dt>{{ site.data.locales[page.locale].post.source }}:</dt>
+   <dd>
+    {{ page.source}}
+    {% else %}
+    {{ site.source.name}}
+   </dd>
+{% endif %}
 {% if page.muftis %}
   {% if page.muftis.chairman %}
   <dt>{{ site.data.locales[page.locale].post.chairman }}:</dt>
