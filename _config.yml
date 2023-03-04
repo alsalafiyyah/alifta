@@ -30,3 +30,10 @@ defaults:
       layout: post
       locale: ar
       permalink: /ar/:title
+  # config pages
+  - scope: 
+      path: _en/**
+    values: 
+      locale: en
+  - scope: 
+      path: _ar/**
