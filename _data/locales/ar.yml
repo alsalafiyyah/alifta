@@ -17,12 +17,6 @@ page:
 
 post:
   dated: "تاريخ النشر في الموقع : "
-  print: طباعة
-  share: مشاركة
-  related_fatwas: فتاوى ذات صلة
-  comments: التعليقات
-  book: الكتاب
-  vol: المجلد
   end: "وبالله التوفيق. وصلى الله على نبينا محمد، وآله وصحبه وسلم."
   chairman: الرئيس
   deputy_chairman: نائب رئيس اللجنة
@@ -31,5 +25,3 @@ post:
   source: المصدر
   translate: ترجمة
   language: اللغة
-  comment: أضف تعليقاً
-  views: المشاهدات
