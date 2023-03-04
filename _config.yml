@@ -37,3 +37,5 @@ defaults:
       locale: en
   - scope: 
       path: _ar/**
+    values: 
+      locale: ar
