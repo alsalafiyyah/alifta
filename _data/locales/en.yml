@@ -1,13 +1,13 @@
 name: English
 
 blog:
-  title: "Alifta Fatwas"
+  title: "Alifta"
   description: 
-  site_url: /en/
+  site_url: /
 
 menu:
   - name: Home
-    link: /en/
+    link: /
     active: home
 
 page:
@@ -17,14 +17,11 @@ page:
 
 post:
   dated: "Posted on:"
-  end: "May Allah grant us success. May peace and blessings be upon our Prophet Muhammad, his family, and Companions."
+  end: "May Allah grant us success. May peace and blessings be upon our Prophet Muhammad, his family, and companions."
   chairman: Chairman
   deputy_chairman: Deputy Chairman
   members: Members
   shaykh: Sh.
   source: Source
   translate: Translate
-  language: Languages
-  chapter: Chapter
-  fatwa_number: Fatwa no. 
-  question: Question
+  language: Language
